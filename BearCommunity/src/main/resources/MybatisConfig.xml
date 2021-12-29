@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <enviroments default="test">
+        <enviroment id="test">
+            <!-- 事务管理类型：JDBC、MANAGED -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 数据源类型：POOLED、UNPOOLED、JNDI -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/BEAR?useSSL=false&amp; serverTimezone=Hongkong&amp; characterEncoding=utf-8&amp; autoReconnect=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </enviroment>
+    </enviroments>
+
+    <mappers>
+        <mapper resource="mapper/BearMapper.xml"></mapper>
+    </mappers>
+</configuration>
